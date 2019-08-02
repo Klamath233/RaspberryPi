@@ -10,10 +10,10 @@ kernel8.elf: linker.ld $(OBJ)
 	$(CROSS_COMPILE)ld -T $< -o $@ $(OBJ)
 
 %.o: %.c
-	$(CROSS_COMPILE)gcc -o $@ $<
+	$(CROSS_COMPILE)gcc -ffreestanding -c $<
 
 %.o: %.S
-	$(CROSS_COMPILE)as -o $@ $<
+	$(CROSS_COMPILE)gcc -ffreestanding -c $<
 
 .PHONY: clean
 clean:

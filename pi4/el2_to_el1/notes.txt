@@ -1,0 +1,1 @@
+Bare metal entry address 0x80000
